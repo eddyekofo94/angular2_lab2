@@ -1,0 +1,24 @@
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+</head>
+
+<div class="container">
+  <h1>Conversion Form</h1>
+  <form>
+    <div class="form-group">
+      <label for="metrics">Metric</label>
+      <select #metric class="form-control" name="metric" required>
+        <option *ngFor="let m of metrics" [value]="m">{{m}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="name">Enter the distance</label>
+      <input #distance (keyup.enter)="convert(metric.value, distance.value)" required/>
+    </div>
+    <div class="form-group">
+      <label for="result">Equals</label>
+      <p>{{result}}</p>
+    </div>
+    <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+  </form>
+</div>
